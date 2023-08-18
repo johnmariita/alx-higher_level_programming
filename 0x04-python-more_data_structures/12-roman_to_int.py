@@ -17,11 +17,11 @@ def roman_to_int(roman_string):
         prev_char = roman_string[roman_string.index(numeral) - 1]
         if roman_string.index(numeral) != 0:
             if prev_char not in roman_numerals:
-                return -1
+                return 0
             if value // 10 > roman_numerals[prev_char]:
                 return 0
         if (total > 5 and total != 10) and value == 1:
-            return -1
+            return 0
         if value >= prev_value:
             total += value
         else:
