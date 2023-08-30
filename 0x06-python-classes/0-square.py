@@ -5,3 +5,4 @@ class Square:
     An empty class representing a square
     """
     pass
+
