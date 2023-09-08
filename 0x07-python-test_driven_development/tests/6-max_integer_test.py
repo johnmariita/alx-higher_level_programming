@@ -15,6 +15,16 @@ class TestMaxInteger(unittest.TestCase):
         ordered = [1, 2, 3, 4]
         self.assertEqual(max_integer(ordered), 4)
 
+    def test_negative_numbers(self):
+        """Test negative numbers in the list"""
+        negs = [-2, -4, -5, -6]
+        self.assertEqual(max_integer(negs), -2)
+
+    def test_one_neg(self):
+        """Test one negative number"""
+        one_neg = [-1, 3, 4, 7]
+        self.assertEqual(max_integer(one_neg), 7)
+
     def test_unordered_list(self):
         """Test an unordered list of integers."""
         unordered = [1, 2, 4, 3]
