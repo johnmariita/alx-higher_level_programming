@@ -3,14 +3,25 @@
 
 
 def matrix_divided(matrix, div):
+    """
+    Function that divides a matrix
+
+    Args:
+        matrix: a list of lists
+        div: the value to divide the matrix
+
+    Raises:
+        TypeError: raises a TypeError if the matrix is not a list
+        ZeroDivisionError: when div is 0
+    """
     if not isinstance(matrix, list) or any([not isinstance(sub, list)
                                             for sub in matrix]):
         raise TypeError("matrix must be a matrix "
-                "(list of lists) of integers/floats")
+                        "(list of lists) of integers/floats")
     if not all(isinstance(x, (int, float))
                for sub in matrix for x in sub):
         raise TypeError("matrix must be a matrix "
-                "(list of lists) of integers/floats")
+                        "(list of lists) of integers/floats")
     if not all([len(x) == len(matrix[0]) for x in matrix]):
         raise TypeError('Each row of the matrix must have the same size')
     if not isinstance(div, int) and not isinstance(div, float):
