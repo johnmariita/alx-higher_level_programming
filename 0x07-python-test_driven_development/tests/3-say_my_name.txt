@@ -3,10 +3,10 @@ Say my name program tests
 >>> say_my_name = __import__('3-say_my_name').say_my_name
 
 >>> say_my_name("John", "Mariita")
-my name is John Mariita
+My name is John Mariita
 
 >>> say_my_name("John")
-my name is John 
+My name is John 
 
 >>> say_my_name("John", 19)
 Traceback (most recent call last):
