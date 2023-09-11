@@ -1,4 +1,4 @@
-#!/usr/bin/pytthon3
+#!/usr/bin/python3
 """ Class containing the definition of the square class """
 
 
