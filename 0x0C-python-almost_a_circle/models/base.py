@@ -39,12 +39,16 @@ class Base:
         Args:
             list_objs: the list of dicts
         """
-        list_objsc = list_objs.copy()
         filename = cls.__name__ + ".json"
-        for i in range(len(list_objsc)):
-            list_objsc[i] = list_objsc[i].to_dictionary()
-        with open(filename, "w") as f:
-            json.dump(list_objsc, f)
+        if list_objs is None:
+            with open(filename, "w") as f:
+                f.write("[]")
+        else:
+            list_objsc = list_objs.copy()
+            for i in range(len(list_objsc)):
+                list_objsc[i] = list_objsc[i].to_dictionary()
+            with open(filename, "w") as f:
+                json.dump(list_objsc, f)
 
     @staticmethod
     def from_json_string(json_string):
