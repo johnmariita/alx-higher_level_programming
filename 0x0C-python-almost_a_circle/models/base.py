@@ -34,7 +34,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """
-        function that saves a list of dictionaries to a file
+        function that saves a list of dictionaries to a json file
 
         Args:
             list_objs: the list of dicts
@@ -48,7 +48,7 @@ class Base:
             for i in range(len(list_objsc)):
                 list_objsc[i] = list_objsc[i].to_dictionary()
             with open(filename, "w") as f:
-                json.dump(list_objsc, f)
+                f.write(Base.to_json_string(list_objsc))
 
     @staticmethod
     def from_json_string(json_string):
