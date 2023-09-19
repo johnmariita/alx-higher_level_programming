@@ -78,7 +78,7 @@ class Base:
             mydict = dummy.to_dictionary()
             return cls(**(dummy.to_dictionary()))
         else:
-            dummy = Square(1, 1)
+            dummy = Square(1)
             dummy.update(**dictionary)
             mydict = dummy.to_dictionary()
             return cls(**(dummy.to_dictionary()))
