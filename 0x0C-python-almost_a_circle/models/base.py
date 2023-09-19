@@ -73,12 +73,12 @@ class Base:
         from models.rectangle import Rectangle
         from models.square import Square
         if cls.__name__ == "Rectangle":
-            dummy = Rectangle(1, 1, 1, 1, 1)
+            dummy = Rectangle(1, 1)
             dummy.update(**dictionary)
             mydict = dummy.to_dictionary()
             return cls(**(dummy.to_dictionary()))
         else:
-            dummy = Square(1, 1, 1, 1)
+            dummy = Square(1, 1)
             dummy.update(**dictionary)
             mydict = dummy.to_dictionary()
             return cls(**(dummy.to_dictionary()))
