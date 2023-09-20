@@ -5,6 +5,9 @@
 import json
 
 
+import csv
+
+
 class Base:
     """ Base class implementation """
 
@@ -99,3 +102,61 @@ class Base:
             return json_string
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        function that saves a list to a csv file
+
+        Args:
+            list_objs: a list of the objects to be saved in the file
+        """
+        filename = cls.__name__ + ".csv"
+        if cls.__name__ == "Rectangle":
+            with open(filename, "w") as f:
+                csvw = csv.writer(f)
+                csvw.writerow(["id", "width", "height", "x", "y"])
+
+                data = []
+                list_obj = [obj.to_dictionary() for obj in list_objs]
+                for i in list_obj:
+                    li = [0, 0, 0, 0, 0]
+                    li[0] = i["id"]
+                    li[1] = i["width"]
+                    li[2] = i["height"]
+                    li[3] = i["x"]
+                    li[4] = i["y"]
+                    data.append(li)
+                for i in data:
+                    csvw.writerow(i)
+        else:
+            with open(filename, "w") as f:
+                csvw = csv.writer(f)
+                csvw.writerow(["id", "size", "x", "y"])
+                data = []
+                list_obj = [obj.to_dictionary() for obj in list_objs]
+                for i in list_obj:
+                    li = [0, 0, 0, 0]
+                    li[0] = i["id"]
+                    li[1] = i["size"]
+                    li[2] = i["x"]
+                    li[3] = i["y"]
+                    data.append(li)
+                for i in data:
+                    csvw.writerow(i)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        function that creates an instance from a csv file
+
+        Returns:
+            returns a list of instances
+        """
+        filename = cls.__name__ + ".csv"
+        with open(filename, "r") as f:
+            li = []
+            csvr = csv.DictReader(f)
+            for i in csvr:
+                li.append(cls.create(**i))
+            return li
