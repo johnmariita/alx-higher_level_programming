@@ -3,7 +3,7 @@
 const { argv } = require('node:process');
 
 if (argv.length === 2) {
-  console.log('No arguments');
+  console.log('No argument');
 } else {
-  console.log('Arguments found');
+  console.log('Argument found');
 }
