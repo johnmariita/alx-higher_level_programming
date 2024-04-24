@@ -7,6 +7,10 @@ class Square2 extends Square {
     this.size = size;
   }
 
+  double () {
+    super.double();
+  }
+
   charPrint (c) {
     if (typeof c === 'undefined') {
       super.print();
