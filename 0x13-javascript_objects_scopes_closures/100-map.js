@@ -3,5 +3,5 @@
 const { list } = require('./100-data');
 
 console.log(list);
-const newList = list.map(a => a * list.indexOf(a));
+const newList = list.map((a, b) => a * b);
 console.log(newList);
