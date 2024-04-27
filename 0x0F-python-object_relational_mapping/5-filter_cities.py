@@ -13,3 +13,5 @@ if __name__ == "__main__":
                WHERE cities.state_id = states.id AND states.name=%s", (city, ))
     cities = [x[0] for x in cu.fetchall()]
     print(', '.join(cities))
+    cu.close()
+    db.close()

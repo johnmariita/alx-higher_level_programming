@@ -14,3 +14,5 @@ if __name__ == "__main__":
     rows = cu.fetchall()
     for row in rows:
         print(row)
+    cu.close()
+    db.close()
