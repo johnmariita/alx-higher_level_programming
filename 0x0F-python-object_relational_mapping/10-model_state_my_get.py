@@ -15,6 +15,6 @@ if __name__ == "__main__":
     safe_state = sys.argv[4].split("'")[0]
     state = session.query(State).filter(State.name == safe_state).one_or_none()
     if state:
-        print(f"{state.id}: {state.name}")
+        print(state.id)
     else:
         print("Not found")
