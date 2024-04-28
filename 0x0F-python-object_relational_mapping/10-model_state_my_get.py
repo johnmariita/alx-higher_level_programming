@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""A Script that lists all the states from the table states
-with the letter 'a' in their name"""
+"""A Script that lists all the states from the table states"""
 
 import sys
 from sqlalchemy import create_engine
