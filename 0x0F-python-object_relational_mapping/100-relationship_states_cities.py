@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Script that creates a State and a city"""
 
 import sys
 from relationship_state import Base, State
