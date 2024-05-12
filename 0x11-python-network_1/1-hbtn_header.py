@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# A script that prints the request Id from a response header
+"""A script that prints the request Id from a response header"""
 
 import sys
 import urllib.request
