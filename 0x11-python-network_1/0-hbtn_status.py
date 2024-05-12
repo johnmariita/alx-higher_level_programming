@@ -2,9 +2,10 @@
 """A script that sends a GET request"""
 import urllib.request
 
-with urllib.request.urlopen("https://alx-intranet.hbtn.io/status") as response:
-    body = response.read()
-    print("Body response:")
-    print(f"    - type: {type(body)}")
-    print(f"    - content: {body}")
-    print(f"    - utf8 content: {body.decode('utf-8')}")
+if __name__ == "__main__":
+    with urllib.request.urlopen("https://alx-intranet.hbtn.io/status") as response:
+        body = response.read()
+        print("Body response:")
+        print(f"    - type: {type(body)}")
+        print(f"    - content: {body}")
+        print(f"    - utf8 content: {body.decode('utf-8')}")
