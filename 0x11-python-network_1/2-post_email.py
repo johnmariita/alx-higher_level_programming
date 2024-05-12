@@ -7,7 +7,7 @@ import urllib.parse
 
 if __name__ == "__main__":
     url = sys.argv[1]
-    data = {'email': 'hr@holbertonschool.com'}
+    data = {'email': sys.argv[2]}
     en_data = urllib.parse.urlencode(data)
     en_data = en_data.encode('ascii')
     with urllib.request.urlopen(url, en_data) as response:
