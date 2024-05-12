@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""HTTP error handling"""
+"""Swnds a request and prints the body handling the errors"""
 
 import sys
 import urllib.request
